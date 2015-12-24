@@ -276,6 +276,14 @@ $(function(){
             //$('.hbnull,#null2,#btn4,#btn5').show();
             //alert($('#btn5'))
             //TODO 执行 ajax请求红包
+            $.ajax({
+                type: "GET",
+                url: 'test',
+                dataType: 'json',
+                success: function(data){
+                    alert(data.return_msg);
+                }
+            })
             goshare();
         }
     })

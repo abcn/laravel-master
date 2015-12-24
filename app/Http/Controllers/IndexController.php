@@ -21,11 +21,15 @@ class IndexController extends Controller
 {
     private $appid;
     private $secret;
+    private $mch_id;
+    private $mch_key;
 
     public function __construct()
     {
-        $this->appid = 'wx1f1396a63919c6c9';
-        $this->secret = '39abf0fc4db090f669ff3a5a5cee8603';
+        $this->appid = 'wx2034aacc35826c3b';
+        $this->secret = '3c7d40dd49a42ead8fc926d9b03244e8';
+        $this->mch_id = '1277996001';
+        $this->mch_key = '713f65e9c859151035478655dbg1891c';
     }
 
     /**
@@ -51,8 +55,6 @@ class IndexController extends Controller
             $customer->openid = $openid;
             $customer->save();
         }
-
-
         $data = array();
 
         return view('Index/index',$data);
@@ -61,19 +63,20 @@ class IndexController extends Controller
      *红包发送代码
      */
     public function sendRed(){
-
+        $user = Session::get('logged_user');
         //$appId, $appSecret, $mchId, $mchKey
         /**
          * 第 1 步：定义商户
          */
 
-        $business = new Business($this->appid,$this->secret,$mch_id);
+        $business = new Business($this->appid,$this->secret,$this->mch_id,$this->mch_key);
         /**
          * 第 2 步：设置证书路径
          * CLIENTCERT_PATH即证书apiclient_cert.pem的路径
          * CLIENTkey_PATH即证书apiclient_key.pem的路径
          */
-
+        $business->setClientCert(storage_path('cert/apiclient_cert.pem'));
+        $business->setClientKey(storage_path('cert/apiclient_key.pem'));
         /**
          * 第 3 步：创建LuckMoney实例
          */
@@ -83,25 +86,25 @@ class IndexController extends Controller
          * 第 4 步：要发送的红包相关数据（本代码以发送现金红包为例）
          */
         $luckMoneyData['mch_billno'] = time();  //红包记录对应的商户订单号
-        $luckMoneyData['send_name'] = '某某公司';  //红包发送者名称
-        $luckMoneyData['re_openid'] = 'oJCvDjjQKx5LMtM_1kjK0gGQLsew';  //红包接收者的openId
+        $luckMoneyData['send_name'] = '小小牧场';  //红包发送者名称
+        $luckMoneyData['re_openid'] = $user['openid'];  //红包接收者的openId
         $luckMoneyData['total_amount'] = 100;  //红包总额（单位为分），现金红包至少100，裂变红包至少300
         $luckMoneyData['total_num'] = 1;  //现金红包时为1，裂变红包时至少为3
-        $luckMoneyData['wishing'] = '祝福语';
-        $luckMoneyData['act_name'] = '活动名称';
-        $luckMoneyData['remark'] = '红包备注';
+        $luckMoneyData['wishing'] = '恭喜发财';
+        $luckMoneyData['act_name'] = '关注有礼';
+        $luckMoneyData['remark'] = 'test';
 
         /**
          * 第 5 步：发送红包
          * 第二个参数表示发送的红包类型，有现金红包（'CASH_LUCK_MONEY'）和裂变红包（'GROUP_LUCK_MONEY'）可选，红包工具类中已定义相关常量。
          */
         $result = $luckMoneyServer->send($luckMoneyData);
-
+        return $result;
         //判断红包是否发送成功
-        if($result){
-            //抽奖次数-1
-
-        }
+//        if($result){
+//            //抽奖次数-1
+//            return $result;
+//        }
 
     }
 

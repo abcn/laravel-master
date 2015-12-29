@@ -10,7 +10,6 @@ namespace App\Http\Controllers;
 
 
 use App\Customer;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -25,6 +24,7 @@ class IndexController extends Controller
     private $secret;
     private $mch_id;
     private $mch_key;
+    private $openid;
 
     public function __construct()
     {
@@ -47,13 +47,13 @@ class IndexController extends Controller
             Session::put(['logged_user' => $user]);
         }
         //获取用户 openid $user['openid']
-        $openid = $user['openid'];
+        $this->openid = $user['openid'];
         //将用户存入数据库
-        $isRegister = DB::table('customers')->where('openid',$openid)->first();
+        $isRegister = DB::table('customers')->where('openid',$this->openid)->first();
         //检查该用户是否已注册
         if(empty($isRegister)) {
             $customer = new Customer();
-            $customer->openid = $openid;
+            $customer->openid = $this->openid;
             $customer->save();
         }
 
@@ -68,10 +68,8 @@ class IndexController extends Controller
      *红包发送代码
      */
     public function sendRed(){
-        $user = Session::get('logged_user');
-        $user['openid'] = 'oJamAuNIaiWe1_1KDBlwJu9e22xs';
         //发送红包钱判断用户是否有发送机会
-        $customer = Customer::where('openid', $user['openid'])->firstOrFail();
+        $customer = Customer::where('openid', $this->openid)->firstOrFail();
         if($customer->chances <= 0){
             $result['return_code']  = 'FAIL';
             $result['return_msg']   = '红包机会已用完';
@@ -99,7 +97,7 @@ class IndexController extends Controller
          */
         $luckMoneyData['mch_billno']    = time();  //红包记录对应的商户订单号
         $luckMoneyData['send_name']     = '犟骨头';  //红包发送者名称
-        $luckMoneyData['re_openid']     = $user['openid'];  //红包接收者的openId
+        $luckMoneyData['re_openid']     = $this->openid;  //红包接收者的openId
         $luckMoneyData['total_amount']  = 100;  //红包总额（单位为分），现金红包至少100，裂变红包至少300
         $luckMoneyData['total_num']     = 1;  //现金红包时为1，裂变红包时至少为3
         $luckMoneyData['wishing']       = '恭喜发财';
@@ -114,24 +112,17 @@ class IndexController extends Controller
 
         //判断红包是否发送成功
         if($result['return_code'] == 'SUCCESS'){
-            //抽奖次数-1
-            $openid = $user['openid'];
             //将用户存入数据库
-            DB::table('customers')->decrement('chances', 1, ['openid'=>$openid]);
-            return $result;
-        }else{
-            return $result;
+            DB::table('customers')->decrement('chances', 1, ['openid'=>$this->openid]);
         }
+        return $result;
     }
     /**
      * 分享到朋友圈获取红包机会+1
      */
     public function addChance(){
-        //获取openid
-        $user = Session::get('logged_user');
-        $user['openid'] = 'oJamAuNIaiWe1_1KDBlwJu9e22xs';
         //根据openid 获取用户信息
-        $customer = Customer::where('openid', $user['openid'])->firstOrFail();
+        $customer = Customer::where('openid', $this->openid)->firstOrFail();
         //判断用户是否已经分享过
         if($customer->share == 1){
             $result['return_code']  = 'FAIL';

@@ -27,7 +27,7 @@ class IndexController extends Controller
 
     public function __construct()
     {
-        $this->appid = 'wx2034aacc35826c3b';
+        $this->appid = 'wx1f1396a63919c6c9';
         $this->secret = '3c7d40dd49a42ead8fc926d9b03244e8';
         $this->mch_id = '1277996001';
         $this->mch_key = '713f65e9c859151035478655dbg1891c';
@@ -45,11 +45,12 @@ class IndexController extends Controller
             $user = $auth->authorize($to = 'http://192.168.31.156'); //返回用户
             Session::put(['logged_user' => $user]);
         }
-
+        var_dump(Session::all());
         //获取用户 openid $user['openid']
         $openid = $user['openid'];
         //将用户存入数据库
         $isRegister = DB::table('customers')->where('openid',$openid)->first();
+        var_dump($isRegister);
         //检查该用户是否已注册
         if(empty($isRegister)) {
             $customer = new Customer();

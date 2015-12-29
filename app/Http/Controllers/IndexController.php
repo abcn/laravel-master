@@ -42,7 +42,7 @@ class IndexController extends Controller
             $user = Session::get('logged_user');
         }else{
             $auth = new Auth($this->appid,$this->secret);
-            $user = $auth->authorize($to = 'http://192.168.31.156'); //返回用户
+            $user = $auth->authorize($to = 'http://tianpengtech.com'); //返回用户
             Session::put(['logged_user' => $user]);
         }
         var_dump(Session::all());
@@ -95,7 +95,7 @@ class IndexController extends Controller
          * 第 4 步：要发送的红包相关数据（本代码以发送现金红包为例）
          */
         $luckMoneyData['mch_billno'] = time();  //红包记录对应的商户订单号
-        $luckMoneyData['send_name'] = '小小牧场';  //红包发送者名称
+        $luckMoneyData['send_name'] = '犟骨头';  //红包发送者名称
         $luckMoneyData['re_openid'] = $user['openid'];  //红包接收者的openId
         $luckMoneyData['total_amount'] = 100;  //红包总额（单位为分），现金红包至少100，裂变红包至少300
         $luckMoneyData['total_num'] = 1;  //现金红包时为1，裂变红包时至少为3

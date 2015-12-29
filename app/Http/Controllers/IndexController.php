@@ -42,7 +42,7 @@ class IndexController extends Controller
             $user = Session::get('logged_user');
         }else{
             $auth = new Auth($this->appid,$this->secret);
-            $user = $auth->authorize($to = 'http://tianpengtech.com'); //返回用户
+            $user = $auth->authorize($to = 'http://192.168.31.156'); //返回用户
             Session::put(['logged_user' => $user]);
         }
         var_dump(Session::all());

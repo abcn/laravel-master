@@ -1,24 +1,15 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
-    wx.config({
-        debug: false,
-        appId: 'wx485063d3bc9ab337',
-        timestamp: 1450328147,
-        nonceStr: 'ghDs5PVXwWl8n871',
-        signature: 'a1ee5df7f11b9699d618afaca87bb144ff819593',
-        jsApiList: [
-            'checkJsApi',
-            'onMenuShareTimeline',
-            'onMenuShareAppMessage',
-            'onMenuShareQQ',
-        ]
-    });
+    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareQQ', 'onMenuShareTimeline','onMenuShareAppMessage'), false, true) ?>);
+
     wx.ready(function(){
         wx.onMenuShareTimeline({// 分享到朋友圈
             title: '传说中的人傻钱多红包群', // 分享标题
-            link: 'http://hbplus.sinaapp.com/', // 分享链接
-            imgUrl: './image/sharepop.png', // 分享图标
+            link: 'http://192.168.31.156/', // 分享链接
+            imgUrl: "{{asset('image/sharepop.png')}}", // 分享图标
             success: function () {
+                //成功分享后 获取红包机会+1 仅此一次
+                $.get('share');
             },
             cancel: function () {
             }
@@ -27,11 +18,12 @@
         wx.onMenuShareAppMessage({// 分享给微信好友
             title: '传说中的人傻钱多红包群', // 分享标题
             desc: '马云邀请你加入中国顶级土豪群，进入查看详情。', // 分享描述
-            link: 'http://hbplus.sinaapp.com/', // 分享链接
-            imgUrl: './image/sharepop.png', // 分享图标
+            link: 'http://192.168.31.156/', // 分享链接
+            imgUrl: "{{asset('image/sharepop.png')}}", // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
             success: function () {
+                //成功分享后 获取红包机会+1 仅此一次
             },
             cancel: function () {
             }

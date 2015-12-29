@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Overtrue\Wechat\Auth;
+use Overtrue\Wechat\Js;
 use Overtrue\Wechat\LuckMoney;
 use Overtrue\Wechat\Payment\Business;
 
@@ -27,14 +28,14 @@ class IndexController extends Controller
 
     public function __construct()
     {
-        $this->appid = 'wx2034aacc35826c3b';
-        $this->secret = '3c7d40dd49a42ead8fc926d9b03244e8';
-        $this->mch_id = '1277996001';
-        $this->mch_key = '713f65e9c859151035478655dbg1891c';
+        $this->appid    = 'wx2034aacc35826c3b';
+        $this->secret   = '3c7d40dd49a42ead8fc926d9b03244e8';
+        $this->mch_id   = '1277996001';
+        $this->mch_key  = '713f65e9c859151035478655dbg1891c';
     }
 
     /**
-     *
+     *显示页面
      */
     public function index(){
         //判断用户授权状态
@@ -55,10 +56,14 @@ class IndexController extends Controller
             $customer->openid = $openid;
             $customer->save();
         }
+
+        //生成微信JSSDK所需参数
         $data = array();
+        $data['js'] = new Js($this->appid,$this->secret);
 
         return view('Index/index',$data);
     }
+
     /**
      *红包发送代码
      */
@@ -68,8 +73,8 @@ class IndexController extends Controller
         //发送红包钱判断用户是否有发送机会
         $customer = Customer::where('openid', $user['openid'])->firstOrFail();
         if($customer->chances <= 0){
-            $result['return_code'] = 'FAIL';
-            $result['return_msg'] = '抽奖机会已用完';
+            $result['return_code']  = 'FAIL';
+            $result['return_msg']   = '红包机会已用完';
             return $result;
         }
         //$appId, $appSecret, $mchId, $mchKey
@@ -92,14 +97,14 @@ class IndexController extends Controller
         /**
          * 第 4 步：要发送的红包相关数据（本代码以发送现金红包为例）
          */
-        $luckMoneyData['mch_billno'] = time();  //红包记录对应的商户订单号
-        $luckMoneyData['send_name'] = '犟骨头';  //红包发送者名称
-        $luckMoneyData['re_openid'] = $user['openid'];  //红包接收者的openId
-        $luckMoneyData['total_amount'] = 100;  //红包总额（单位为分），现金红包至少100，裂变红包至少300
-        $luckMoneyData['total_num'] = 1;  //现金红包时为1，裂变红包时至少为3
-        $luckMoneyData['wishing'] = '恭喜发财';
-        $luckMoneyData['act_name'] = '关注有礼';
-        $luckMoneyData['remark'] = 'test';
+        $luckMoneyData['mch_billno']    = time();  //红包记录对应的商户订单号
+        $luckMoneyData['send_name']     = '犟骨头';  //红包发送者名称
+        $luckMoneyData['re_openid']     = $user['openid'];  //红包接收者的openId
+        $luckMoneyData['total_amount']  = 100;  //红包总额（单位为分），现金红包至少100，裂变红包至少300
+        $luckMoneyData['total_num']     = 1;  //现金红包时为1，裂变红包时至少为3
+        $luckMoneyData['wishing']       = '恭喜发财';
+        $luckMoneyData['act_name']      = '关注有礼';
+        $luckMoneyData['remark']        = 'test';
 
         /**
          * 第 5 步：发送红包
@@ -117,7 +122,29 @@ class IndexController extends Controller
         }else{
             return $result;
         }
-
+    }
+    /**
+     * 分享到朋友圈获取红包机会+1
+     */
+    public function addChance(){
+        //获取openid
+        $user = Session::get('logged_user');
+        $user['openid'] = 'oJamAuNIaiWe1_1KDBlwJu9e22xs';
+        //根据openid 获取用户信息
+        $customer = Customer::where('openid', $user['openid'])->firstOrFail();
+        //判断用户是否已经分享过
+        if($customer->share == 1){
+            $result['return_code']  = 'FAIL';
+            $result['return_msg']   = '已经分享过不能再获取红包机会';
+            return $result;
+        }
+        //增加用户抽奖机会
+        $customer->chances  += 1;
+        $customer->share    = 1;
+        $customer->save();
+        $result['return_code']  = 'SUCCESS';
+        $result['return_msg']   = '已增加获取红包机会';
+        return $result;
     }
 
 }

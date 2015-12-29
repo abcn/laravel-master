@@ -52,7 +52,7 @@ $(function(){
         $(".main").fadeIn(300,function(){
             setTimeout(function(){
                 $('.longpage').show();
-                document.title='亿万富豪新年红包群（20）';
+                document.title='传说中的人傻钱多红包群';
                 //setTimeout(function(){
                 //    motionObj['page'+1].play();
                 //},1000)
@@ -83,13 +83,13 @@ $(function(){
     if(nameParameter !='' && nameParameter != null && nameParameter != undefined){
         //alert(userNamesArray[parseInt(_uid)])
         //alert(userNamesArray[parseInt(nameParameter)])
-        $('.cont').text(userNamesArray[parseInt(nameParameter)]+'邀请你加入了“亿万富豪新年红包群”群聊，群聊参与人还有：程维 滴滴、刘强东 京东、王石 万科、柳传志 联想、潘石屹 SOHO中国、王思聪 国民老公-……');
+        $('.cont').text(userNamesArray[parseInt(nameParameter)]+'邀请你加入了“传说中的人傻钱多红包群”群聊，群聊参与人还有：程维 滴滴、刘强东 京东、王石 万科、柳传志 联想、潘石屹 SOHO中国、王思聪 国民老公-……');
     }
 
 
     /*wxdata['title'] = _userName+'邀请你加入群聊';
 
-    wxdata['desc'] = _userName+'邀请你加入群聊亿万富豪红包群，进入查看详情。'
+    wxdata['desc'] = _userName+'邀请你加入群聊传说中的人傻钱多红包群，进入查看详情。'
     wxdata['link'] = wxdata['link']+'?id='+_uid;
     setShare();  //微信分享*/
 
@@ -278,7 +278,7 @@ $(function(){
             //TODO 执行 ajax请求红包
             $.ajax({
                 type: "GET",
-                url: 'test',
+                url: 'send',
                 dataType: 'json',
                 success: function(data){
                     alert(data.return_msg);

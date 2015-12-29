@@ -38,7 +38,6 @@ class IndexController extends Controller
      */
     public function index(){
         //判断用户授权状态
-        var_dump(Session::has('logged_user'));
         if(Session::has('logged_user')){
             $user = Session::get('logged_user');
         }else{
@@ -50,7 +49,6 @@ class IndexController extends Controller
         $openid = $user['openid'];
         //将用户存入数据库
         $isRegister = DB::table('customers')->where('openid',$openid)->first();
-        var_dump($isRegister);
         //检查该用户是否已注册
         if(empty($isRegister)) {
             $customer = new Customer();

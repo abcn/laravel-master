@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Customer;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -35,7 +36,7 @@ class IndexController extends Controller
     /**
      *
      */
-    public function index(Request $request){
+    public function index(){
         //判断用户授权状态
         if(Session::has('logged_user')){
             $user = Session::get('logged_user');
@@ -64,11 +65,18 @@ class IndexController extends Controller
      */
     public function sendRed(){
         $user = Session::get('logged_user');
+        $user['openid'] = 'oJamAuNIaiWe1_1KDBlwJu9e22xs';
+        //发送红包钱判断用户是否有发送机会
+        $customer = Customer::where('openid', $user['openid'])->firstOrFail();
+        if($customer->chances <= 0){
+            $result['return_code'] = 'FAIL';
+            $result['return_msg'] = '抽奖机会已用完';
+            return $result;
+        }
         //$appId, $appSecret, $mchId, $mchKey
         /**
          * 第 1 步：定义商户
          */
-
         $business = new Business($this->appid,$this->secret,$this->mch_id,$this->mch_key);
         /**
          * 第 2 步：设置证书路径
@@ -99,12 +107,17 @@ class IndexController extends Controller
          * 第二个参数表示发送的红包类型，有现金红包（'CASH_LUCK_MONEY'）和裂变红包（'GROUP_LUCK_MONEY'）可选，红包工具类中已定义相关常量。
          */
         $result = $luckMoneyServer->send($luckMoneyData);
-        return $result;
+
         //判断红包是否发送成功
-//        if($result){
-//            //抽奖次数-1
-//            return $result;
-//        }
+        if($result['return_code'] == 'SUCCESS'){
+            //抽奖次数-1
+            $openid = $user['openid'];
+            //将用户存入数据库
+            DB::table('customers')->decrement('chances', 1, ['openid'=>$openid]);
+            return $result;
+        }else{
+            return $result;
+        }
 
     }
 

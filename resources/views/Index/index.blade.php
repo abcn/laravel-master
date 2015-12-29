@@ -2,7 +2,7 @@
 <script>
     wx.config({
         debug: false,
-        appId: 'wx2034aacc35826c3b',
+        appId: 'wx485063d3bc9ab337',
         timestamp: 1450328147,
         nonceStr: 'ghDs5PVXwWl8n871',
         signature: 'a1ee5df7f11b9699d618afaca87bb144ff819593',
@@ -15,7 +15,7 @@
     });
     wx.ready(function(){
         wx.onMenuShareTimeline({// 分享到朋友圈
-            title: '中国顶级土豪群', // 分享标题
+            title: '传说中的人傻钱多红包群', // 分享标题
             link: 'http://hbplus.sinaapp.com/', // 分享链接
             imgUrl: './image/sharepop.png', // 分享图标
             success: function () {
@@ -25,7 +25,7 @@
         });
 
         wx.onMenuShareAppMessage({// 分享给微信好友
-            title: '中国顶级土豪群', // 分享标题
+            title: '传说中的人傻钱多红包群', // 分享标题
             desc: '马云邀请你加入中国顶级土豪群，进入查看详情。', // 分享描述
             link: 'http://hbplus.sinaapp.com/', // 分享链接
             imgUrl: './image/sharepop.png', // 分享图标
@@ -43,7 +43,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>中国顶级土豪群（20）</title>
+    <title>传说中的人傻钱多红包群</title>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <script type="text/javascript" src="js/setviewport.js"></script>
@@ -63,13 +63,13 @@
     <div class="page" id="page">
         <!--<div class="enterpage"></div>-->
         <div class="longpage hide">
-            <div class="groupinfo radioBox"><div class="cont" style="color:white;">马云 马云 阿里，王健林 万达，王思聪 国民老公，马化腾 腾讯，李彦宏 百度，雷军 小米，刘强东 京东，周鸿祎 360，王石 万科-……</div></div>
+            <div class="groupinfo radioBox"><div class="cont" style="color:white;">马云 阿里 邀请王健林 万达，王思聪 国民老公，马化腾 腾讯，李彦宏 百度，雷军 小米，刘强东 京东，周鸿祎 360，王石 万科  加入了群聊</div></div>
 
             <div id="msg1" class="massge hide" style="height: 160px;">
-                <div class="headimg"><img src="./image/my.jpg" /></div>
+                <div class="headimg"><img src="image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
-                <div class="mcontent">
-                    <div class="mcla radioBox">朋友们，你们知道犟骨头么？</div>
+                <div class="mcontent" >
+                    <div class="mcla radioBox" >朋友们，你们知道犟骨头sss么？</div>
                     <div class="jb"><img src="./image/pdj.png" /></div>
                 </div>
             </div>
@@ -255,7 +255,7 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">我终于把他们都弄走了，咱2个单独谈谈合作的事吧！你可能年轻，没见过这么多钱，这1个亿拿去挥霍吧！</div>
+                    <div class="mcla radioBox">哈哈哈，我太机智了！</div>
                     <div class="jb"><img src="./image/pdj.png" /></div>
                 </div>
             </div>
@@ -268,7 +268,7 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">这一个亿还是拿去给喜欢犟骨头的朋友吧 ！</div>
+                    <div class="mcla radioBox">我终于把他们都弄走了，咱2个单独谈谈合作的事吧！你可能年轻，没见过这么多钱，这1个亿拿去挥霍吧！</div>
                     <div class="jb"><img src="./image/pdj.png" /></div>
                 </div>
             </div>
@@ -313,7 +313,6 @@
     _mwx=window._mwx||{};
     _mwx.siteId=8000292;
     //_mwx.openId=xxxxxxxxxxx; //OpenID为微信提供的用户唯一标识,需要开发者传入，如果没有OpenID，去掉该代码即可。
-    _mwx.debug=true;//代码调试阶段，加入此代码，正式上线之后去掉该代码
 </script>
 <div style="display:none">
     <script>

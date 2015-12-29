@@ -27,7 +27,7 @@ class IndexController extends Controller
 
     public function __construct()
     {
-        $this->appid = 'wx1f1396a63919c6c9';
+        $this->appid = 'wx2034aacc35826c3b';
         $this->secret = '3c7d40dd49a42ead8fc926d9b03244e8';
         $this->mch_id = '1277996001';
         $this->mch_key = '713f65e9c859151035478655dbg1891c';

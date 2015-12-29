@@ -38,6 +38,7 @@ class IndexController extends Controller
      */
     public function index(){
         //判断用户授权状态
+        var_dump(Session::has('logged_user'));
         if(Session::has('logged_user')){
             $user = Session::get('logged_user');
         }else{
@@ -45,7 +46,6 @@ class IndexController extends Controller
             $user = $auth->authorize($to = 'http://192.168.31.156'); //返回用户
             Session::put(['logged_user' => $user]);
         }
-        var_dump(Session::all());
         //获取用户 openid $user['openid']
         $openid = $user['openid'];
         //将用户存入数据库

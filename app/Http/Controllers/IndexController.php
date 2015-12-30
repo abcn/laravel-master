@@ -39,6 +39,17 @@ class IndexController extends Controller
      */
     public function index(){
         session_start();
+        //生成微信JSSDK所需参数
+        $data = array();
+        $data['js'] = new Js($this->appid,$this->secret);
+
+        return view('Index/index',$data);
+    }
+
+    /**
+     * 微信授权页面
+     */
+    public function pageShow(){
         //判断用户授权状态
         $auth = new Auth($this->appid,$this->secret);
         if(!empty($_SESSION['logged_user'])){
@@ -57,12 +68,8 @@ class IndexController extends Controller
             $customer->openid = $this->openid;
             $customer->save();
         }
-
-        //生成微信JSSDK所需参数
-        $data = array();
-        $data['js'] = new Js($this->appid,$this->secret);
-
-        return view('Index/index',$data);
+        //跳转到显示页面
+        return redirect('/');
     }
 
     /**

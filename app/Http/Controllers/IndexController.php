@@ -45,6 +45,7 @@ class IndexController extends Controller
         }else{
             $user = $auth->authorize($to = 'http://www.tianpengtech.com'); //返回用户
             Session::put(['logged_user' => $user]);
+            Session::save();
         }
         //获取用户 openid $user['openid']
         $this->openid = $user['openid'];

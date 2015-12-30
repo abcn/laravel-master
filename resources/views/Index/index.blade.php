@@ -61,7 +61,7 @@
                 <div class="headimg"><img src="image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent" >
-                    <div class="mcla radioBox" >朋友们，你们知道犟骨头sss么？</div>
+                    <div class="mcla radioBox" >朋友们，你们知道犟骨头么？</div>
                     <div class="jb"><img src="./image/pdj.png" /></div>
                 </div>
             </div>

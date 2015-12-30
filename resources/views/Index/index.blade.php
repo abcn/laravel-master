@@ -57,7 +57,7 @@
         <div class="longpage hide">
             <div class="groupinfo radioBox"><div class="cont" style="color:white;">马云 阿里 邀请王健林 万达，王思聪 国民老公，马化腾 腾讯，李彦宏 百度，雷军 小米，刘强东 京东，周鸿祎 360，王石 万科  加入了群聊</div></div>
 
-            <div id="msg1" class="massge hide" style="height: 160px;">
+            <div id="msg1" class="massge hide" style="height: 140px;">
                 <div class="headimg"><img src="image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent" >

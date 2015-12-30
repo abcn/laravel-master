@@ -40,10 +40,7 @@ class IndexController extends Controller
     public function index(){
         session_start();
         //检查是否授权
-        //判断用户授权状态
-        $auth = new Auth($this->appid,$this->secret);
         if(empty($_SESSION['logged_user'])){
-            var_dump('/');
             return redirect('/');
         }
         //生成微信JSSDK所需参数
@@ -76,7 +73,6 @@ class IndexController extends Controller
             $customer->save();
         }
         //跳转到显示页面
-        var_dump('show');
         return redirect('show');
     }
 

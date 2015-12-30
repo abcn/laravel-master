@@ -43,7 +43,7 @@ class IndexController extends Controller
         if(Session::has('logged_user')){
             $user = Session::get('logged_user');
         }else{
-            $user = $auth->authorize($to = 'http://www.tianpengtech.com'); //返回用户
+            $user = $auth->authorize($to = 'http://www.tianpengtech.com',$scope = 'snsapi_base'); //返回用户
             Session::put(['logged_user' => $user]);
             Session::save();
         }

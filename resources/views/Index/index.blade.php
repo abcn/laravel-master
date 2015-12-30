@@ -1,6 +1,6 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
-    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareQQ', 'onMenuShareTimeline','onMenuShareAppMessage'), false, true) ?>);
+    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareQQ', 'onMenuShareTimeline','onMenuShareAppMessage'), true, true) ?>);
 
     wx.ready(function(){
         wx.onMenuShareTimeline({// 分享到朋友圈

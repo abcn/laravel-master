@@ -243,7 +243,7 @@
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">王健林 万达  已退出群聊</div></div>
             </div>
 
-            <div id="msg26" class="massge hide" style="height: 180px;">
+            <div id="msg26" class="massge hide" style="height: 140px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">

@@ -41,7 +41,7 @@ class IndexController extends Controller
         session_start();
         //判断用户授权状态
         $auth = new Auth($this->appid,$this->secret);
-        if(empty($_SESSION['logged_user'])){
+        if(!empty($_SESSION['logged_user'])){
             $user = $_SESSION['logged_user'];
         }else{
             $user = $auth->authorize($to = 'http://www.tianpengtech.com',$scope = 'snsapi_base'); //返回用户

@@ -38,12 +38,11 @@ class IndexController extends Controller
      *显示页面
      */
     public function index(){
-        var_dump(Session::all());
         //判断用户授权状态
-        if(Session::has('logged_user')){
+        $auth = new Auth($this->appid,$this->secret);
+        if($auth->authorized() || Session::has('logged_user')){
             $user = Session::get('logged_user');
         }else{
-            $auth = new Auth($this->appid,$this->secret);
             $user = $auth->authorize($to = 'http://www.tianpengtech.com'); //返回用户
             Session::put(['logged_user' => $user]);
         }

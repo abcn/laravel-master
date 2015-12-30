@@ -38,6 +38,7 @@ class IndexController extends Controller
      *显示页面
      */
     public function index(){
+        var_dump(Session::all());
         //判断用户授权状态
         if(Session::has('logged_user')){
             $user = Session::get('logged_user');

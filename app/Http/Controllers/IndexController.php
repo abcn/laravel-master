@@ -41,11 +41,11 @@ class IndexController extends Controller
         session_start();
         //判断用户授权状态
         $auth = new Auth($this->appid,$this->secret);
-        if(!empty($_SESSION['logged_user'])){
-            $user = $_SESSION['logged_user'];
+        if(Session::has('logged_user')){
+            $user = Session::get('logged_user');
         }else{
             $user = $auth->authorize($to = 'http://www.tianpengtech.com',$scope = 'snsapi_base'); //返回用户
-            $_SESSION['logged_user'] = $user->all();
+            Session::put('logged_user',$user->all());
         }
         //获取用户 openid $user['openid']
         $this->openid = $user['openid'];
@@ -74,10 +74,8 @@ class IndexController extends Controller
      *红包发送代码
      */
     public function sendRed(){
-        session_start();
-        $openid = $_SESSION['logged_user'];
         //发送红包钱判断用户是否有发送机会
-        $customer = Customer::where('openid', $openid)->firstOrFail();
+        $customer = Customer::where('openid', Session::get('logged_user')['openid'])->firstOrFail();
         if($customer->chances <= 0){
             $result['return_code']  = 'FAIL';
             $result['return_msg']   = '红包机会已用完';
@@ -105,7 +103,7 @@ class IndexController extends Controller
          */
         $luckMoneyData['mch_billno']    = time();  //红包记录对应的商户订单号
         $luckMoneyData['send_name']     = '犟骨头';  //红包发送者名称
-        $luckMoneyData['re_openid']     = $openid;  //红包接收者的openId
+        $luckMoneyData['re_openid']     = Session::get('logged_user')['openid'];  //红包接收者的openId
         $luckMoneyData['total_amount']  = 100;  //红包总额（单位为分），现金红包至少100，裂变红包至少300
         $luckMoneyData['total_num']     = 1;  //现金红包时为1，裂变红包时至少为3
         $luckMoneyData['wishing']       = '恭喜发财';
@@ -121,7 +119,7 @@ class IndexController extends Controller
         //判断红包是否发送成功
         if($result['return_code'] == 'SUCCESS'){
             //将用户存入数据库
-            DB::table('customers')->decrement('chances', 1, ['openid'=>$openid]);
+            DB::table('customers')->decrement('chances', 1, ['openid'=>Session::get('logged_user')['openid']]);
         }
         return $result;
     }
@@ -129,10 +127,8 @@ class IndexController extends Controller
      * 分享到朋友圈获取红包机会+1
      */
     public function addChance(){
-        session_start();
-        $openid = $_SESSION['logged_user'];
         //根据openid 获取用户信息
-        $customer = Customer::where('openid', $openid)->firstOrFail();
+        $customer = Customer::where('openid', Session::get('logged_user')['openid'])->firstOrFail();
         //判断用户是否已经分享过
         if($customer->share == 1){
             $result['return_code']  = 'FAIL';

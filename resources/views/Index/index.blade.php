@@ -61,8 +61,8 @@
                 <div class="headimg"><img src="image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent" >
-                    <div class="mcla radioBox" >朋友们，你们知道犟骨头么？</div>
-                    <div class="jb"><img src="./image/pdj.png" /></div>
+                    <div class="mcla radioBox" style="background-color: #62b900">朋友们，你们知道犟骨头么？</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 
@@ -97,8 +97,8 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">撕聪，你真是为娱乐圈操碎了心啊！中国的未来怎么放心交给你，我很失望，我对你粉转路人了！</div>
-                    <div class="jb"><img src="./image/pdj.png" /></div>
+                    <div class="mcla radioBox" style="background-color: #62b900">撕聪，你真是为娱乐圈操碎了心啊！中国的未来怎么放心交给你，我很失望，我对你粉转路人了！</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 
@@ -137,8 +137,8 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">一家餐饮公司，最近听说挺火的，所以和老周和小马一起去尝了尝，本宝宝感觉不错！</div>
-                    <div class="jb"><img src="./image/pdj.png" /></div>
+                    <div class="mcla radioBox" style="background-color: #62b900">一家餐饮公司，最近听说挺火的，所以和老周和小马一起去尝了尝，本宝宝感觉不错！</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 
@@ -182,8 +182,8 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">大家还能不能一起愉快的玩耍了？说正事，我想大家一起收购犟骨头！王石你怎么看？</div>
-                    <div class="jb"><img src="./image/pdj.png" /></div>
+                    <div class="mcla radioBox" style="background-color: #62b900">大家还能不能一起愉快的玩耍了？说正事，我想大家一起收购犟骨头！王石你怎么看？</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 
@@ -204,8 +204,8 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">对了，强东你不是也干奶茶么？也算是餐饮，给点意见呗！</div>
-                    <div class="jb"><img src="./image/pdj.png" /></div>
+                    <div class="mcla radioBox" style="background-color: #62b900">对了，强东你不是也干奶茶么？也算是餐饮，给点意见呗！</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 
@@ -226,8 +226,8 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">唉，今天是怎么了？该退群的没退群， 不该退的全退了。</div>
-                    <div class="jb"><img src="./image/pdj.png" /></div>
+                    <div class="mcla radioBox" style="background-color: #62b900">唉，今天是怎么了？该退群的没退群， 不该退的全退了。</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 
@@ -247,8 +247,8 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">哈哈哈，我太机智了！</div>
-                    <div class="jb"><img src="./image/pdj.png" /></div>
+                    <div class="mcla radioBox" style="background-color: #62b900">哈哈哈，我太机智了！</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 
@@ -260,8 +260,8 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox">我终于把他们都弄走了，咱2个单独谈谈合作的事吧！你可能年轻，没见过这么多钱，这1个亿拿去挥霍吧！</div>
-                    <div class="jb"><img src="./image/pdj.png" /></div>
+                    <div class="mcla radioBox" style="background-color: #62b900">我终于把他们都弄走了，咱2个单独谈谈合作的事吧！你可能年轻，没见过这么多钱，这1个亿拿去挥霍吧！</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 

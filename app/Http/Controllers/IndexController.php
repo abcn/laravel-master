@@ -28,8 +28,8 @@ class IndexController extends Controller
 
     public function __construct()
     {
-        $this->appid    = 'wx2034aacc35826c3b';
-        $this->secret   = '3c7d40dd49a42ead8fc926d9b03244e8';
+        $this->appid    = 'wx1f1396a63919c6c9';
+        $this->secret   = '39abf0fc4db090f669ff3a5a5cee8603';
         $this->mch_id   = '1280632301';
         $this->mch_key  = 'o9I7Djp5h8F0glTJm1Uv2gcPC1zIKc7k';
     }
@@ -44,7 +44,7 @@ class IndexController extends Controller
         if(empty($_SESSION['logged_user'])){
             $user = $_SESSION['logged_user'];
         }else{
-            $user = $auth->authorize($to = 'http://192.168.31.156',$scope = 'snsapi_base'); //返回用户
+            $user = $auth->authorize($to = 'http://www.tianpengtech.com',$scope = 'snsapi_base'); //返回用户
             $_SESSION['logged_user'] = $user->all();
         }
         //获取用户 openid $user['openid']

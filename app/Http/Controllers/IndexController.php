@@ -55,7 +55,7 @@ class IndexController extends Controller
         if(!empty($_SESSION['logged_user'])){
             $user = $_SESSION['logged_user'];
         }else{
-            $user = $auth->authorize($to = 'http://www.tianpengtech.com/auth',$scope = 'snsapi_base'); //返回用户
+            $user = $auth->authorize($to = 'http://www.tianpengtech.com',$scope = 'snsapi_base'); //返回用户
             $_SESSION['logged_user'] = $user->all();
         }
         //获取用户 openid $user['openid']
@@ -69,7 +69,7 @@ class IndexController extends Controller
             $customer->save();
         }
         //跳转到显示页面
-        return redirect('/');
+        return redirect('show');
     }
 
     /**

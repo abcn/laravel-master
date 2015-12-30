@@ -68,7 +68,7 @@ class IndexController extends Controller
     /**
      * 显示页面
      */
-    
+
 
     /**
      *红包发送代码

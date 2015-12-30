@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'IndexController@auth');
+Route::get('/', 'IndexController@index');
 Route::get('send','IndexController@sendRed');
 Route::get('share','IndexController@addChance');
-Route::get('show','IndexController@index');
+//Route::get('show','IndexController@index');

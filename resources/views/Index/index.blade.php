@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <div id="msg3" class="massge hide" style="height: 120px;">
+            <div id="msg3" class="massge hide" style="height: 140px;">
                 <div class="headimg"><img src="./image/lj.jpg" /></div>
                 <div class="mname">雷军 小米</div>
                 <div class="mcontent">
@@ -170,11 +170,11 @@
                 </div>
             </div>
 
-            <div id="msg14" class="massge hide" style="height: 150px;">
+            <div id="msg14" class="massge hide" style="height: 120px;">
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">马化腾 腾讯 已退出群聊</div></div>
             </div>
 
-            <div id="msg15" class="massge hide" style="height: 150px;">
+            <div id="msg15" class="massge hide" style="height: 120px;">
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">周鸿祎 360  已退出群聊</div></div>
             </div>
 
@@ -187,7 +187,7 @@
                 </div>
             </div>
 
-            <div id="msg17" class="massge hide" style="height: 180px;">
+            <div id="msg17" class="massge hide" style="height: 170px;">
                 <div class="headimg"><img src="./image/ws.jpg" /></div>
                 <div class="mname">王石 万科</div>
                 <div class="mcontent">
@@ -200,7 +200,7 @@
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">王石 万科 已退出群聊</div></div>
             </div>
 
-            <div id="msg19" class="massge hide" style="height: 180px;">
+            <div id="msg19" class="massge hide" style="height: 170px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
@@ -209,7 +209,7 @@
                 </div>
             </div>
 
-            <div id="msg20" class="massge hide" style="height: 180px;">
+            <div id="msg20" class="massge hide" style="height: 170px;">
                 <div class="headimg"><img src="./image/lqd.jpg" /></div>
                 <div class="mname">刘强东 京东</div>
                 <div class="mcontent">
@@ -222,7 +222,7 @@
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">刘强东 京东 已退出群聊</div></div>
             </div>
 
-            <div id="msg22" class="massge hide" style="height: 180px;">
+            <div id="msg22" class="massge hide" style="height: 170px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
@@ -243,7 +243,7 @@
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">王健林 万达  已退出群聊</div></div>
             </div>
 
-            <div id="msg26" class="massge hide" style="height: 140px;">
+            <div id="msg26" class="massge hide" style="height: 120px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">

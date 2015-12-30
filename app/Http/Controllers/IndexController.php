@@ -91,6 +91,7 @@ class IndexController extends Controller
          * CLIENTCERT_PATH即证书apiclient_cert.pem的路径
          * CLIENTkey_PATH即证书apiclient_key.pem的路径
          */
+
         $business->setClientCert(storage_path('cert/apiclient_cert.pem'));
         $business->setClientKey(storage_path('cert/apiclient_key.pem'));
         /**

@@ -40,7 +40,7 @@ class IndexController extends Controller
     public function index(){
         //判断用户授权状态
         $auth = new Auth($this->appid,$this->secret);
-        if($auth->authorized() || Session::has('logged_user')){
+        if(Session::has('logged_user')){
             $user = Session::get('logged_user');
         }else{
             $user = $auth->authorize($to = 'http://www.tianpengtech.com'); //返回用户

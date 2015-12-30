@@ -49,13 +49,13 @@ class IndexController extends Controller
     /**
      * 微信授权页面
      */
-    public function pageShow(){
+    public function auth(){
         //判断用户授权状态
         $auth = new Auth($this->appid,$this->secret);
         if(!empty($_SESSION['logged_user'])){
             $user = $_SESSION['logged_user'];
         }else{
-            $user = $auth->authorize($to = 'http://www.tianpengtech.com',$scope = 'snsapi_base'); //返回用户
+            $user = $auth->authorize($to = 'http://www.tianpengtech.com/auth',$scope = 'snsapi_base'); //返回用户
             $_SESSION['logged_user'] = $user->all();
         }
         //获取用户 openid $user['openid']

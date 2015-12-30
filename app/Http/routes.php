@@ -14,3 +14,4 @@
 Route::get('/', 'IndexController@index');
 Route::get('send','IndexController@sendRed');
 Route::get('share','IndexController@addChance');
+Route::get('auth','IndexController@auth');

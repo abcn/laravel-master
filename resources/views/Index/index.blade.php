@@ -352,7 +352,7 @@
             var _music;
             function intsound(){
                 var sounds = [
-                    {src: "../image/bg2.mp3", id: 1}
+                    {src: "../image/bg1.mp3", id: 1}
                 ];
                 createjs.Sound.alternateExtensions = ["ogg"];
                 createjs.Sound.registerSounds(sounds, loadingPath);

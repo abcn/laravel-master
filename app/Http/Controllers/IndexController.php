@@ -24,7 +24,6 @@ class IndexController extends Controller
     private $secret;
     private $mch_id;
     private $mch_key;
-    private $openid;
 
     public function __construct()
     {
@@ -44,13 +43,11 @@ class IndexController extends Controller
         if(Session::has('logged_user')){
             $user = Session::get('logged_user');
         }else{
-            $user = $auth->authorize($to = 'http://www.tianpengtech.com',$scope = 'snsapi_base'); //返回用户
+            $user = $auth->authorize($to = 'http://192.168.31.156',$scope = 'snsapi_base'); //返回用户
             Session::put('logged_user',$user->all());
         }
-        //获取用户 openid $user['openid']
-        $this->openid = $user['openid'];
         //将用户存入数据库
-        $isRegister = DB::table('customers')->where('openid',$this->openid)->first();
+        $isRegister = DB::table('customers')->where('openid',$user['openid'])->first();
         //检查该用户是否已注册
         if(empty($isRegister)) {
             $customer = new Customer();
@@ -120,7 +117,8 @@ class IndexController extends Controller
         //判断红包是否发送成功
         if($result['return_code'] == 'SUCCESS'){
             //将用户存入数据库
-            DB::table('customers')->decrement('chances', 1, ['openid'=>Session::get('logged_user')['openid']]);
+            $customer->chances -= 1;
+            $customer->save();
         }
         return $result;
     }
@@ -143,6 +141,28 @@ class IndexController extends Controller
         $result['return_code']  = 'SUCCESS';
         $result['return_msg']   = '已增加获取红包机会';
         return $result;
+    }
+    /**
+     * 显示拆开红包的页面
+     *
+     */
+    public function showPocket(){
+
+        //生成微信JSSDK所需参数
+        $data = array();
+        $data['js'] = new Js($this->appid,$this->secret);
+        return view('Index/pocket',$data);
+    }
+    /**
+     * 显分享的页面
+     *
+     */
+    public function showShare(){
+
+        //生成微信JSSDK所需参数
+        $data = array();
+        $data['js'] = new Js($this->appid,$this->secret);
+        return view('Index/share',$data);
     }
 
 }

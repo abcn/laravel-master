@@ -3,13 +3,13 @@
     wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareQQ', 'onMenuShareTimeline','onMenuShareAppMessage'), false, true) ?>);
 
     wx.ready(function(){
-        wx.onMenuShareTimeline({// 分享到朋友圈
+        wx.onMenuShareTimeline({//分享到朋友圈
             title: '传说中的人傻钱多红包群', // 分享标题
-            link: 'http://www.tianpengtech.com/', // 分享链接
+            link: 'http://www.haipago.com/', // 分享链接
 {{--            imgUrl: "{{asset('image/sharepop.png')}}", // 分享图标--}}
             success: function () {
                 //成功分享后 获取红包机会+1 仅此一次
-                $.get('share');
+                window.location.href = 'share';
             },
             cancel: function () {
             }
@@ -18,7 +18,7 @@
         wx.onMenuShareAppMessage({// 分享给微信好友
             title: '传说中的人傻钱多红包群', // 分享标题
             desc: '马云邀请你加入中国顶级土豪群，进入查看详情。', // 分享描述
-            link: 'http://www.tianpengtech.com/', // 分享链接
+            link: 'http://www.haipago.com/', // 分享链接
 {{--            imgUrl: "{{asset('image/sharepop.png')}}", // 分享图标--}}
             type: '', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
@@ -594,14 +594,15 @@
                     //$('.hbnull,#null2,#btn4,#btn5').show();
                     //alert($('#btn5'))
                     //TODO 执行 ajax请求红包
-                    $.ajax({
-                        type: "GET",
-                        url: 'send',
-                        dataType: 'json',
-                        success: function(data){
-                            alert(data.return_msg);
-                        }
-                    })
+//                    $.ajax({
+//                        type: "GET",
+//                        url: 'send',
+//                        dataType: 'json',
+//                        success: function(data){
+//                            alert(data.return_msg);
+//                        }
+//                    })
+                    window.location.href = 'pocket';
                     goshare();
                 }
             })

@@ -13,5 +13,11 @@
 
 Route::get('/', 'IndexController@index');
 Route::get('send','IndexController@sendRed');
-Route::get('share','IndexController@addChance');
+Route::get('chance','IndexController@addChance');
+Route::get('pocket','IndexController@showPocket');
+Route::get('share','IndexController@showShare');
 //Route::get('show','IndexController@index');
+
+//Qr
+Route::get('qr','QrController@index');
+Route::post('token','QrController@token');

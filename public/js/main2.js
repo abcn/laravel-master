@@ -9,10 +9,10 @@ $(function(){
     $('html,body').on(touchmove,function(e){
         e.preventDefault()
     });
-	
+
 	_mz_wx_view (1);//秒针检测
-	
-	
+
+
     var motionObj = {};
     var loadingPath='images/';
     var stageH=$(window).height();
@@ -34,7 +34,7 @@ $(function(){
     var _music;
     function intsound(){
         var sounds = [
-            {src: "../image/bg1.mp3", id: 1}
+            {src: "../image/bg2.mp3", id: 1}
         ];
         createjs.Sound.alternateExtensions = ["ogg"];
         createjs.Sound.registerSounds(sounds, loadingPath);
@@ -228,7 +228,7 @@ $(function(){
             $('#msg6 .circle').css({'animation':'none','-webkit-animation':'none'});
             $('#msg6 .circle,#msg6 .hand').fadeOut();
 			_mz_wx_view (2);//马云红包页
-			_mz_wx_custom(1); 
+			_mz_wx_custom(1);
             if(isTheFirstReceive){
                 if(ct){
                     $('.hongbao,#hb1').show();
@@ -249,7 +249,7 @@ $(function(){
         if(_btn2==1){
             if(canRemoveMoney){
 				_mz_wx_view (3);//马云红包派完页
-				_mz_wx_custom(2); 
+				_mz_wx_custom(2);
                 $('#hb1Open,#btn3').show();
                 $('#hb1').hide();
                 TweenMax.to('#hb1',{scale:0.5, alpha:0});
@@ -266,7 +266,7 @@ $(function(){
         }else{
             //CEO的红包
 			_mz_wx_view (6);//滴滴程维领红包
-			_mz_wx_custom(5); 
+			_mz_wx_custom(5);
             $('.hbnull').css('transform','scale('+stageW/640+','+stageH/1039+')');
             $('.hbnull').css('-webkit-transform','scale('+stageW/640+','+stageH/1039+')');
             $('.hbnull').css('top',stageH/2-520+'px');
@@ -293,7 +293,7 @@ $(function(){
         $('.hbnull,#null1').show();
         $('#hb1Open').hide();
 		_mz_wx_view (4);//马云红包看手气页
-		_mz_wx_custom(3); 
+		_mz_wx_custom(3);
         setTimeout(function(){
             $('#hbnull .circle').show();
             $('#hbnull .hand').show();
@@ -369,24 +369,24 @@ $(function(){
     $('#redpick2, #msg19 .hand').on(touchstart, function(){
         $('.hongbao,#hb2').show();
 		_mz_wx_view (5);//打开滴滴程CEO红包
-		_mz_wx_custom(4); 
+		_mz_wx_custom(4);
         TweenMax.to('#hb2',.5, {alpha:1, scale:1, ease:Bounce.easeOut});
     })
 
     function goshare(){
         $('#btn4,#btn5').show();
         $('#btn4').on(touchstart, function(){
-			_mz_wx_custom(6); 
+			_mz_wx_custom(6);
 
 			setTimeout(function(){
-				
+
 				location.href='http://m.pthola.com/Account/Register';
-				
-				},500); 
-            
+
+				},500);
+
         });
         $('#btn5').on(touchstart, function(){
-						_mz_wx_custom(7); 
+						_mz_wx_custom(7);
 
             $('.sharepop').fadeIn(300,function(){
                 setTimeout(function(){

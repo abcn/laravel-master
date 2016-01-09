@@ -37,23 +37,22 @@ class IndexController extends Controller
      *显示页面
      */
     public function index(){
-        session_start();
         //判断用户授权状态
-        $auth = new Auth($this->appid,$this->secret);
-        if(Session::has('logged_user')){
-            $user = Session::get('logged_user');
-        }else{
-            $user = $auth->authorize($to = 'http://192.168.31.156',$scope = 'snsapi_base'); //返回用户
-            Session::put('logged_user',$user->all());
-        }
-        //将用户存入数据库
-        $isRegister = DB::table('customers')->where('openid',$user['openid'])->first();
-        //检查该用户是否已注册
-        if(empty($isRegister)) {
-            $customer = new Customer();
-            $customer->openid = $this->openid;
-            $customer->save();
-        }
+//        $auth = new Auth($this->appid,$this->secret);
+//        if(Session::has('logged_user')){
+//            $user = Session::get('logged_user');
+//        }else{
+//            $user = $auth->authorize($to = 'http://192.168.31.156',$scope = 'snsapi_base'); //返回用户
+//            Session::put('logged_user',$user->all());
+//        }
+//        //将用户存入数据库
+//        $isRegister = DB::table('customers')->where('openid',$user['openid'])->first();
+//        //检查该用户是否已注册
+//        if(empty($isRegister)) {
+//            $customer = new Customer();
+//            $customer->openid = $this->openid;
+//            $customer->save();
+//        }
 
         //生成微信JSSDK所需参数
         $data = array();

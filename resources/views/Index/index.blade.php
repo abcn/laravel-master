@@ -186,7 +186,7 @@
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">周鸿祎 360  已退出群聊</div></div>
             </div>
 
-            <div id="msg17" class="massge hide" style="height: 200px;">
+            <div id="msg17" class="massge hide" style="height: 220px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">

@@ -4,7 +4,7 @@
 
     wx.ready(function(){
         wx.onMenuShareTimeline({//分享到朋友圈
-            title: '传说中的人傻钱多红包群', // 分享标题
+            title: '马云和你谈谈犟骨头', // 分享标题
             link: 'http://www.haipago.com/', // 分享链接
             imgUrl: "{{asset('image/sharepop.jpg')}}", // 分享图标
             success: function () {
@@ -16,7 +16,7 @@
         });
 
         wx.onMenuShareAppMessage({// 分享给微信好友
-            title: '传说中的人傻钱多红包群', // 分享标题
+            title: '马云和你谈谈犟骨头', // 分享标题
             desc: '马云邀请你加入中国顶级土豪群，进入查看详情。', // 分享描述
             link: 'http://www.haipago.com/', // 分享链接
             imgUrl: "{{asset('image/sharepop.jpg')}}", // 分享图标
@@ -102,10 +102,19 @@
             </div>
 
             <div id="msg6" class="massge hide" style="height: 150px;">
+                <div class="headimg"><img src="./image/wsc.jpg" /></div>
+                <div class="mname">王思聪 国民老公</div>
+                <div class="mcontent">
+                    <div class="mcla radioBox">呵呵</div>
+                    <div class="jb"><img src="./image/pdj.png" /></div>
+                </div>
+            </div>
+
+            <div id="msg7" class="massge hide" style="height: 150px;">
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">王思聪 国民老公 已退出了群聊</div></div>
             </div>
 
-            <div id="msg7" class="massge hide" style="height: 120px;">
+            <div id="msg8" class="massge hide" style="height: 120px;">
                 <div class="headimg"><img src="./image/lqd.jpg" /></div>
                 <div class="mname">刘强东 京东</div>
                 <div class="mcontent">
@@ -114,7 +123,7 @@
                 </div>
             </div>
 
-            <div id="msg8" class="massge hide" style="height: 150px;">
+            <div id="msg9" class="massge hide" style="height: 150px;">
                 <div class="headimg"><img src="./image/lyh.jpg" /></div>
                 <div class="mname">李彦宏 百度</div>
                 <div class="mcontent">
@@ -123,7 +132,7 @@
                 </div>
             </div>
 
-            <div id="msg9" class="massge hide" style="height: 180px;">
+            <div id="msg10" class="massge hide" style="height: 180px;">
                 <div class="headimg"><img src="./image/wjl.jpg" /></div>
                 <div class="mname">王健林 万达</div>
                 <div class="mcontent">
@@ -132,7 +141,7 @@
                 </div>
             </div>
 
-            <div id="msg10" class="massge hide" style="height: 180px;">
+            <div id="msg11" class="massge hide" style="height: 180px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
@@ -141,7 +150,7 @@
                 </div>
             </div>
 
-            <div id="msg11" class="massge hide" style="height: 200px;">
+            <div id="msg12" class="massge hide" style="height: 200px;">
                 <div class="headimg"><img src="./image/zhy.jpg" /></div>
                 <div class="mname">周鸿祎 360</div>
                 <div class="mcontent">
@@ -151,7 +160,7 @@
                 </div>
             </div>
 
-            <div id="msg12" class="massge hide" style="height: 180px;">
+            <div id="msg13" class="massge hide" style="height: 180px;">
                 <div class="headimg"><img src="./image/mht.jpg" /></div>
                 <div class="mname">马化腾 腾讯</div>
                 <div class="mcontent">
@@ -160,7 +169,7 @@
                 </div>
             </div>
 
-            <div id="msg13" class="massge hide" style="height: 120px;">
+            <div id="msg14" class="massge hide" style="height: 120px;">
                 <div class="headimg"><img src="./image/zhy.jpg" /></div>
                 <div class="mname">周鸿祎 360</div>
                 <div class="mcontent">
@@ -169,24 +178,24 @@
                 </div>
             </div>
 
-            <div id="msg14" class="massge hide" style="height: 120px;">
+            <div id="msg15" class="massge hide" style="height: 120px;">
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">马化腾 腾讯 已退出群聊</div></div>
             </div>
 
-            <div id="msg15" class="massge hide" style="height: 120px;">
+            <div id="msg16" class="massge hide" style="height: 120px;">
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">周鸿祎 360  已退出群聊</div></div>
             </div>
 
-            <div id="msg16" class="massge hide" style="height: 180px;">
+            <div id="msg17" class="massge hide" style="height: 200px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox" style="background-color: #62b900">大家还能不能一起愉快的玩耍了？说正事，我想大家一起收购犟骨头！王石你怎么看？</div>
+                    <div class="mcla radioBox" style="background-color: #62b900">大家还能不能一起愉快的玩耍了？说正事，我想大家一起商量下收购犟骨头的事！我怕今天我对他们爱答不理,明天他们让我高攀不起啊!王石,收购的事你怎么看？</div>
                     {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
 
-            <div id="msg17" class="massge hide" style="height: 170px;">
+            <div id="msg18" class="massge hide" style="height: 170px;">
                 <div class="headimg"><img src="./image/ws.jpg" /></div>
                 <div class="mname">王石 万科</div>
                 <div class="mcontent">
@@ -195,11 +204,11 @@
                 </div>
             </div>
 
-            <div id="msg18" class="massge hide" style="height: 120px;">
+            <div id="msg19" class="massge hide" style="height: 120px;">
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">王石 万科 已退出群聊</div></div>
             </div>
 
-            <div id="msg19" class="massge hide" style="height: 170px;">
+            <div id="msg20" class="massge hide" style="height: 170px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
@@ -208,7 +217,7 @@
                 </div>
             </div>
 
-            <div id="msg20" class="massge hide" style="height: 170px;">
+            <div id="msg21" class="massge hide" style="height: 170px;">
                 <div class="headimg"><img src="./image/lqd.jpg" /></div>
                 <div class="mname">刘强东 京东</div>
                 <div class="mcontent">
@@ -217,11 +226,11 @@
                 </div>
             </div>
 
-            <div id="msg21" class="massge hide" style="height: 120px;">
+            <div id="msg22" class="massge hide" style="height: 120px;">
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">刘强东 京东 已退出群聊</div></div>
             </div>
 
-            <div id="msg22" class="massge hide" style="height: 170px;">
+            <div id="msg23" class="massge hide" style="height: 170px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
@@ -230,19 +239,19 @@
                 </div>
             </div>
 
-            <div id="msg23" class="massge hide" style="height: 120px;">
-                <div class="groupinfo radioBox"><div class="cont" style="color:white;">刘雷军 小米 已退出群聊</div></div>
-            </div>
-
             <div id="msg24" class="massge hide" style="height: 120px;">
-                <div class="groupinfo radioBox"><div class="cont" style="color:white;">李彦宏 百度 已退出群聊</div></div>
+                <div class="groupinfo radioBox"><div class="cont" style="color:white;">雷军 小米 已退出群聊</div></div>
             </div>
 
             <div id="msg25" class="massge hide" style="height: 120px;">
-                <div class="groupinfo radioBox"><div class="cont" style="color:white;">王健林 万达  已退出群聊</div></div>
+                <div class="groupinfo radioBox"><div class="cont" style="color:white;">李彦宏 百度 已退出群聊</div></div>
             </div>
 
             <div id="msg26" class="massge hide" style="height: 120px;">
+                <div class="groupinfo radioBox"><div class="cont" style="color:white;">王健林 万达  已退出群聊</div></div>
+            </div>
+
+            <div id="msg27" class="massge hide" style="height: 120px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
@@ -251,11 +260,11 @@
                 </div>
             </div>
 
-            <div id="msg27" class="massge hide" style="height: 150px;">
+            <div id="msg28" class="massge hide" style="height: 150px;">
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">马云邀请七惑加入了群聊</div></div>
             </div>
 
-            <div id="msg28" class="massge hide" style="height: 180px;">
+            <div id="msg29" class="massge hide" style="height: 180px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
@@ -264,15 +273,27 @@
                 </div>
             </div>
 
-            <div id="msg29" class="massge hide" style="height: 220px;">
+            <div id="msg30" class="massge hide" style="height: 180px;">
                 <div class="headimg"><img src="./image/tx3.jpg" /></div>
                 <div class="mname">七惑</div>
-                <div class="redpick" id="redpick2">
-                    <img src="./image/redpick.png" />
+                <div class="mcontent">
+                    <div class="mcla radioBox">对不起小马哥!我们不开淘宝店!这一个亿还是拿去给喜欢犟骨头的朋友吧</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
-                <!--                <img class="circle"  src="images/circle.png" />
-                                <img class="hand"  src="images/hand.png" />-->
             </div>
+
+            <div id="msg31" class="massge hide" style="height: 180px;">
+                <div class="headimg"><img src="./image/my.jpg" /></div>
+                <div class="mname">马云 阿里</div>
+                <div class="mcontent">
+                    <div class="mcla radioBox" style="background-color: #62b900">果然是犟骨头！我喜欢</div>
+                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
+                    <div class="redpick" id="redpick2">
+                        <img src="./image/redpick.png" />
+                    </div>
+                </div>
+            </div>
+
             <div class="di"><img src="./image/di.jpg"/></div>
 
         </div>
@@ -470,7 +491,7 @@
             }
 
             function setMS2(){
-                if(msgID<=29){
+                if(msgID<=31){
                     if(msgID==9){
                         _btn1 = 2;
                         _btn2 = 2;

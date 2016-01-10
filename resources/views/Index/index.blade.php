@@ -506,13 +506,13 @@
                         dist += -100;
                         if(msgID==14){
                             clearInterval(_timer);
-                            _timer = setInterval(setMS2,1000);
+                            _timer = setInterval(setMS2,2000);
                         }
                     }else if(msgID==15){
                         TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-50+'px'},ease:Linear.easeNone});
                         dist += -150;
                         clearInterval(_timer);
-                        _timer = setInterval(setMS2,1500);
+                        _timer = setInterval(setMS2,2000);
                     }else if(msgID==18){
                         TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-100+'px'},ease:Linear.easeNone});
                         dist += -250;

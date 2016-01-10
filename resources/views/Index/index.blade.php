@@ -391,7 +391,7 @@
                 $(".main").fadeIn(300,function(){
                     setTimeout(function(){
                         $('.longpage').show();
-                        document.title='传说中的人傻钱多红包群';
+                        document.title='马云邀请你加入群聊';
                         //setTimeout(function(){
                         //    motionObj['page'+1].play();
                         //},1000)

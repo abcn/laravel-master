@@ -145,7 +145,7 @@
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
-                    <div class="mcla radioBox" style="background-color: #62b900">一家餐饮公司，最近听说挺火的，所以和老周和小马一起去尝了尝，本宝宝感觉不错！</div>
+                    <div class="mcla radioBox" style="background-color: #62b900">一家新兴的餐饮公司，最近听说挺火的，所以和老周,小马一起去尝了尝.</div>
                     {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
                 </div>
             </div>
@@ -274,7 +274,7 @@
             </div>
 
             <div id="msg30" class="massge hide" style="height: 180px;">
-                <div class="headimg"><img src="./image/tx3.jpg" /></div>
+                <div class="headimg"><img src="./image/jgt.png" /></div>
                 <div class="mname">七惑</div>
                 <div class="mcontent">
                     <div class="mcla radioBox">对不起小马哥!我们不开淘宝店!这一个亿还是拿去给喜欢犟骨头的朋友吧</div>
@@ -445,7 +445,7 @@
                 msgID=1;
                 //dist = -150+_space;
                 dist = -150;
-                _timer = setInterval(setMS1,2000)
+                _timer = setInterval(setMS1,2500)
             }
 
             //显示消息2
@@ -455,7 +455,7 @@
                 dist = 0;
                 //dist = _space;
                 clearInterval(_timer);
-                _timer = setInterval(setMS2,2000)
+                _timer = setInterval(setMS2,2500)
             }
 
             //播放消息声音
@@ -506,13 +506,13 @@
                         dist += -100;
                         if(msgID==14){
                             clearInterval(_timer);
-                            _timer = setInterval(setMS2,2000);
+                            _timer = setInterval(setMS2,3000);
                         }
                     }else if(msgID==15){
                         TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-50+'px'},ease:Linear.easeNone});
                         dist += -150;
                         clearInterval(_timer);
-                        _timer = setInterval(setMS2,2000);
+                        _timer = setInterval(setMS2,3000);
                     }else if(msgID==18){
                         TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-100+'px'},ease:Linear.easeNone});
                         dist += -250;

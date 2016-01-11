@@ -101,7 +101,7 @@
                 </div>
             </div>
 
-            <div id="msg6" class="massge hide" style="height: 150px;">
+            <div id="msg6" class="massge hide" style="height: 120px;">
                 <div class="headimg"><img src="./image/wsc.jpg" /></div>
                 <div class="mname">王思聪 国民老公</div>
                 <div class="mcontent">
@@ -160,7 +160,7 @@
                 </div>
             </div>
 
-            <div id="msg13" class="massge hide" style="height: 180px;">
+            <div id="msg13" class="massge hide" style="height: 130px;">
                 <div class="headimg"><img src="./image/mht.jpg" /></div>
                 <div class="mname">马化腾 腾讯</div>
                 <div class="mcontent">
@@ -186,7 +186,7 @@
                 <div class="groupinfo radioBox"><div class="cont" style="color:white;">周鸿祎 360  已退出群聊</div></div>
             </div>
 
-            <div id="msg17" class="massge hide" style="height: 220px;">
+            <div id="msg17" class="massge hide" style="height: 230px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
@@ -282,14 +282,20 @@
                 </div>
             </div>
 
-            <div id="msg31" class="massge hide" style="height: 180px;">
+            <div id="msg31" class="massge hide" style="height: 130px;">
                 <div class="headimg"><img src="./image/my.jpg" /></div>
                 <div class="mname">马云 阿里</div>
                 <div class="mcontent">
                     <div class="mcla radioBox" style="background-color: #62b900">果然是犟骨头！我喜欢</div>
-                    {{--<div class="jb"><img src="./image/pdj.png" /></div>--}}
+                </div>
+            </div>
+
+            <div id="msg32" class="massge hide" style="height: 180px;">
+                <div class="headimg"><img src="./image/my.jpg" /></div>
+                <div class="mname">马云 阿里</div>
+                <div class="mcontent">
                     <div class="redpick" id="redpick2">
-                        <img src="./image/redpick.png" />
+                        <img src="./image/redpick.jpg" />
                     </div>
                 </div>
             </div>
@@ -491,7 +497,7 @@
             }
 
             function setMS2(){
-                if(msgID<=31){
+                if(msgID<=32){
                     if(msgID==9){
                         _btn1 = 2;
                         _btn2 = 2;
@@ -513,6 +519,11 @@
                         dist += -150;
                         clearInterval(_timer);
                         _timer = setInterval(setMS2,3000);
+                    }else if(msgID==17){
+                        TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-50+'px'},ease:Linear.easeNone});
+                        dist += -150;
+                        clearInterval(_timer);
+                        _timer = setInterval(setMS2,3500);
                     }else if(msgID==18){
                         TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-100+'px'},ease:Linear.easeNone});
                         dist += -250;

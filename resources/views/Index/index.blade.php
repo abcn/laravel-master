@@ -527,6 +527,21 @@
                     }else if(msgID==18){
                         TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-100+'px'},ease:Linear.easeNone});
                         dist += -250;
+                    }else if(msgID==24){
+                        TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-50+'px'},ease:Linear.easeNone});
+                        dist += -150;
+                        clearInterval(_timer);
+                        _timer = setInterval(setMS2,1500);
+                    }else if(msgID==25){
+                        TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-50+'px'},ease:Linear.easeNone});
+                        dist += -150;
+                        clearInterval(_timer);
+                        _timer = setInterval(setMS2,1500);
+                    }else if(msgID==26){
+                        TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-50+'px'},ease:Linear.easeNone});
+                        dist += -150;
+                        clearInterval(_timer);
+                        _timer = setInterval(setMS2,1500);
                     }else if(msgID==29){
                         TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-150+'px'},ease:Linear.easeNone});
                         dist += -300;

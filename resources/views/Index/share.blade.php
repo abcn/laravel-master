@@ -37,13 +37,7 @@
     <meta charset="UTF-8">
     <title>马云和你聊聊犟骨头</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <style>
-        body{
-            background:url('{{asset('image/share.jpg')}}') top left;
-            background-size:100% 100%;
-            overflow:hidden;
-        }
-    </style>
 </head>
 <body>
+    <img src="{{asset('image/share.jpg')}}" width="100%" height="100%"/>
 </body>

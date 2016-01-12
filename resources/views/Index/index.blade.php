@@ -542,6 +542,11 @@
                         dist += -150;
                         clearInterval(_timer);
                         _timer = setInterval(setMS2,1500);
+                    }else if(msgID==27){
+                        TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-50+'px'},ease:Linear.easeNone});
+                        dist += -150;
+                        clearInterval(_timer);
+                        _timer = setInterval(setMS2,3000);
                     }else if(msgID==29){
                         TweenMax.to($(".longpage>div").not($('.di')),.5, {css:{'top':_DIST+dist-150+'px'},ease:Linear.easeNone});
                         dist += -300;

@@ -6,7 +6,7 @@
         wx.onMenuShareTimeline({//分享到朋友圈
             title: '马云邀请你加入群聊', // 分享标题
             link: 'http://www.haipago.com/', // 分享链接
-            imgUrl: "{{asset('image/sharepop.jpg')}}", // 分享图标
+            imgUrl: "{{asset('image/shareimage.jpg')}}", // 分享图标
             success: function () {
                 //成功分享后 获取红包机会+1 仅此一次
                 window.location.href = 'share';
@@ -19,7 +19,7 @@
             title: '马云邀请你加入群聊', // 分享标题
             desc: '马云邀请你加入中国顶级土豪群，进入查看详情。', // 分享描述
             link: 'http://www.haipago.com/', // 分享链接
-            imgUrl: "{{asset('image/sharepop.jpg')}}", // 分享图标
+            imgUrl: "{{asset('image/shareimage.jpg')}}", // 分享图标
             type: '', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
             success: function () {
